@@ -1,1 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PetFinder</title>
 
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f4f6f9;
+      color:#222;
+    }
+
+    header{
+      background:#ff914d;
+      color:white;
+      padding:20px;
+      text-align:center;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1{
+      font-size:40px;
+    }
+
+    header p{
+      margin-top:8px;
+      font-size:18px;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:30px 0;
+    }
+
+    .hero{
+      display:flex;
+      gap:30px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .hero-text{
+      flex:1;
+    }
+
+    .hero-text h2{
+      font-size:45px;
+      margin-bottom:15px;
+      color:#333;
+    }
+
+    .hero-text p{
+      font-size:18px;
+      line-height:1.6;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#ff914d;
+      color:white;
+      padding:15px 25px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#ff7b28;
+      transform:scale(1.05);
+    }
+
+    .hero-image{
+      flex:1;
+      text-align:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:450px;
+    }
+
+    .section-title{
+      margin:50px 0 25px;
+      font-size:32px;
+      text-align:center;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+    }
+
+    .card-content h3{
+      margin-bottom:10px;
+      color:#ff914d;
+    }
+
+    .status{
+      display:inline-block;
+      margin-top:10px;
+      padding:8px 14px;
+      border-radius:30px;
+      color:white;
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    .lost{
+      background:#ff4d4d;
+    }
+
+    .found{
+      background:#32c766;
+    }
+
+    footer{
+      margin-top:60px;
+      background:#222;
+      color:white;
+      text-align:center;
+      padding:20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🐾 PetFinder</h1>
+    <p>Sistema de identificação de pets perdidos</p>
+  </header>
+
+  <div class="container">
+
+    <section class="hero">
+
+      <div class="hero-text">
+        <h2>Ajude pets a voltarem para casa ❤️</h2>
+
+        <p>
+          O PetFinder conecta pessoas que encontraram animais
+          perdidos com seus donos através de QR Code e localização.
+        </p>
+
+        <a href="#cadastro" class="btn">Cadastrar Pet</a>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+      </div>
+
+    </section>
+
+    <h2 class="section-title">Pets Perdidos</h2>
+
+    <section class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1000">
+
+        <div class="card-content">
+          <h3>Thor</h3>
+          <p><strong>Raça:</strong> Buldogue Inglês</p>
+          <p><strong>Local:</strong> Curitiba - PR</p>
+
+          <span class="status lost">PERDIDO</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=1000">
+
+        <div class="card-content">
+          <h3>Luna</h3>
+          <p><strong>Raça:</strong> Gato SRD </p>
+          <p><strong>Local:</strong> Colombo - PR</p>
+
+          <span class="status found">ENCONTRADA</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1000">
+
+        <div class="card-content">
+          <h3>Mel</h3>
+          <p><strong>Raça:</strong> SRD</p>
+          <p><strong>Local:</strong> São José dos Pinhais</p>
+
+          <span class="status lost">PERDIDO</span>
+        </div>
+      </div>
+
+    </section>
+
+    <h2 class="section-title" id="cadastro">Cadastrar Novo Pet</h2>
+
+    <div class="card" style="padding:30px; max-width:700px; margin:auto;">
+      <form>
+        <div style="display:flex; flex-direction:column; gap:15px;">
+
+          <input type="text" placeholder="Nome do pet" style="padding:15px; border-radius:10px; border:1px solid #ccc;">
+
+          <input type="text" placeholder="Raça" style="padding:15px; border-radius:10px; border:1px solid #ccc;">
+
+          <input type="text" placeholder="Cidade" style="padding:15px; border-radius:10px; border:1px solid #ccc;">
+
+          <input type="tel" placeholder="Telefone" style="padding:15px; border-radius:10px; border:1px solid #ccc;">
+
+          <textarea placeholder="Características do pet" rows="5" style="padding:15px; border-radius:10px; border:1px solid #ccc;"></textarea>
+
+          <button type="button" class="btn" onclick="mostrarMensagem()">
+            Salvar Pet
+          </button>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <footer>
+   Projeto de Extensão Faculdade Unicesumar CONECTA PET - ALYSSON PARDO
+  </footer>
+
+  <script>
+    function mostrarMensagem(){
+      alert('Pet cadastrado com sucesso 🐾');
+    }
+  </script>
+</body>
+</html>
